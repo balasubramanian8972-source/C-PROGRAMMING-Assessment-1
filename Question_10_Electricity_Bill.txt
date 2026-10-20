@@ -1,0 +1,38 @@
+QUESTION 10: ELECTRICITY BILL
+
+Question:
+Calculate the electricity bill based on units consumed:
+- Up to 200 units: Rs. 0.50 per unit.
+- Up to 400 units: Rs. 0.65 per unit plus Rs. 100.
+- Up to 600 units: Rs. 0.80 per unit plus Rs. 200.
+- More than 600 units: Rs. 1.25 per unit plus Rs. 425.
+
+Answer (C Program):
+#include <stdio.h>
+
+int main() {
+    int units;
+    float bill;
+
+    scanf("%d", &units);
+
+    if (units <= 200) {
+        bill = units * 0.5;
+    } else if (units <= 400) {
+        bill = units * 0.65 + 100;
+    } else if (units <= 600) {
+        bill = units * 0.80 + 200;
+    } else {
+        bill = units * 1.25 + 425;
+    }
+
+    printf("Rs.%.0f", bill);
+
+    return 0;
+}
+
+Sample Input:
+200
+
+Sample Output:
+Rs.100

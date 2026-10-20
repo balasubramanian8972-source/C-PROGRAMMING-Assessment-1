@@ -1,0 +1,32 @@
+QUESTION 5: CAR MILEAGE
+
+Question:
+Given the car's mileage, the liters of petrol available, and the distance to be travelled, determine whether the car can reach the destination. Print "Can reach" or "Cannot reach".
+
+Answer (C Program):
+#include <stdio.h>
+
+int main() {
+    float mileage;
+    int petrol, distance;
+
+    scanf("%f", &mileage);
+    scanf("%d", &petrol);
+    scanf("%d", &distance);
+
+    if (mileage * petrol >= distance) {
+        printf("Can reach");
+    } else {
+        printf("Cannot reach");
+    }
+
+    return 0;
+}
+
+Sample Input:
+11
+6
+67
+
+Sample Output:
+Cannot reach

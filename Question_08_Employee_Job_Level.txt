@@ -1,0 +1,32 @@
+QUESTION 8: EMPLOYEE JOB LEVEL
+
+Question:
+A company has three job levels: Junior, Mid-Level, and Senior. Employees with less than 3 years cannot be Senior. Employees with 3–7 years can be Mid-Level if their performance score is at least 80. Employees with more than 7 years can be Senior if their performance score is at least 85. Write a C program to determine the job level.
+
+Answer (C Program):
+#include <stdio.h>
+
+int main() {
+    int experience, performance;
+
+    scanf("%d", &experience);
+    scanf("%d", &performance);
+
+    if (experience > 7 && performance >= 85) {
+        printf("Level: Senior");
+    } else if (experience >= 3 && experience <= 7 &&
+               performance >= 80) {
+        printf("Level: Mid-Level");
+    } else {
+        printf("Level: Junior");
+    }
+
+    return 0;
+}
+
+Sample Input:
+9
+88
+
+Sample Output:
+Level: Senior

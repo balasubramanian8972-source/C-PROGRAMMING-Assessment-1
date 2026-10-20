@@ -1,0 +1,57 @@
+QUESTION 9: NUMBER OF DAYS
+
+Question:
+Given a year and a month (1 = January, 2 = February, and so on), print the number of days in that month. If the year is outside 1900–9999 or the month is outside 1–12, print 0. February has 29 days in a leap year and 28 otherwise.
+
+Answer (C Program):
+#include <stdio.h>
+
+int main() {
+    int year, month, days;
+
+    scanf("%d", &year);
+    scanf("%d", &month);
+
+    if (year < 1900 || year > 9999 || month < 1 || month > 12) {
+        printf("0");
+    } else {
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                days = 31;
+                break;
+
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                days = 30;
+                break;
+
+            case 2:
+                if (year % 400 == 0 ||
+                    (year % 4 == 0 && year % 100 != 0)) {
+                    days = 29;
+                } else {
+                    days = 28;
+                }
+                break;
+        }
+
+        printf("%d Days", days);
+    }
+
+    return 0;
+}
+
+Sample Input:
+2000
+2
+
+Sample Output:
+29 Days

@@ -1,0 +1,35 @@
+QUESTION 1: CAB FARE CALCULATION
+
+Question:
+A cab service calculates the final fare based on the distance travelled and the customer's membership. The base fare is Rs.100. If the distance travelled is more than 10 km, an additional Rs.20 is charged for every kilometer beyond 10 km. Customers with a membership receive a 10% discount on the final fare. Write a C program to calculate the amount payable.
+
+Answer (C Program):
+#include <stdio.h>
+
+int main() {
+    float distance, fare = 100;
+    int member;
+
+    scanf("%f", &distance);
+    scanf("%d", &member);
+
+    if (distance > 10) {
+        fare = fare + (distance - 10) * 20;
+    }
+
+    if (member == 1) {
+        fare = fare * 0.9;
+    }
+
+    printf("Final Fare: %.0f", fare);
+    return 0;
+}
+
+Sample Input:
+15
+1
+
+Sample Output:
+Final Fare: 180
+
+Note: Enter 1 for a member and 0 for a non-member.

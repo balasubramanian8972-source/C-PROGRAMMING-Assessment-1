@@ -1,0 +1,31 @@
+QUESTION 2: ONLINE EXAMINATION SYSTEM
+
+Question:
+An online examination system allows a student to submit an exam when the student has answered at least one question and the remaining time is greater than zero. If the exam has already been submitted, another submission should not be allowed. Write a C program to check whether submission is allowed.
+
+Answer (C Program):
+#include <stdio.h>
+
+int main() {
+    int questions, time, submitted;
+
+    scanf("%d", &questions);
+    scanf("%d", &time);
+    scanf("%d", &submitted);
+
+    if (questions >= 1 && time > 0 && submitted == 0) {
+        printf("Submission Allowed");
+    } else {
+        printf("Submission Not Allowed");
+    }
+
+    return 0;
+}
+
+Sample Input:
+45
+12
+0
+
+Sample Output:
+Submission Allowed
